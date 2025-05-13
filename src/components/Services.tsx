@@ -21,7 +21,6 @@ export const Services = () => {
             color: "orange",
             tags: ["Branding", "Website", "App"],
         },
-
     ]
 return (
     <section id="services" className="w-full max-w-full grid grid-cols-[repeat(auto-fill,_minmax(200px,_1fr))] gap-8">

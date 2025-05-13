@@ -25,9 +25,9 @@ export const Card3D: React.FC<CardProps> = ({ title, tags = [], color, onClickEv
     const bgColor = color ? colorMap[color] : randomColor();
 return (
     <div className={`w-full max-w-[708px] aspect-square overflow-hidden relative bg-[${bgColor}]`}>
-        <h3 className='text-[32px]'>{title}</h3>
-        <div className="flex">
-            {tags.map((tag, index) => (<span key={index}>{tag}</span>))}
+        <p className='text-[32px]'>{title}</p>
+        <div className="flex gap-2">
+            {tags.map((tag, index) => (<span className="bg-[#0F0F0F] rounded-full py-2 px-4" key={index}>{tag}</span>))}
         </div>
     </div>
 )}
