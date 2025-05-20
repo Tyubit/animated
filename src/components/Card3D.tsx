@@ -1,4 +1,4 @@
-import { MouseEventHandler } from "react";
+import { MouseEventHandler,ReactNode } from "react";
 
 
 const colorMap: Record<string, string> = {
@@ -15,19 +15,24 @@ export interface CardProps{
     color?: ColorKey,
     tags?: string[],
     onClickEvent?: MouseEventHandler<HTMLDivElement>,
+    children?: ReactNode,
 }
 
-export const Card3D: React.FC<CardProps> = ({ title, tags = [], color, onClickEvent }) => {
+export const Card3D: React.FC<CardProps> = ({ title, tags = [], color, children, onClickEvent }) => {
     const randomColor = () => {
         const values = Object.values(colorMap);
         return values[Math.floor(Math.random() * values.length)];
     };
     const bgColor = color ? colorMap[color] : randomColor();
 return (
-    <div className={`w-full max-w-[708px] aspect-square overflow-hidden relative bg-[${bgColor}]`}>
-        <p className='text-[32px]'>{title}</p>
-        <div className="flex gap-2">
-            {tags.map((tag, index) => (<span className="bg-[#0F0F0F] rounded-full py-2 px-4" key={index}>{tag}</span>))}
+    <article className={`w-full max-w-[708px] aspect-square overflow-hidden relative bg-[${bgColor}] rounded-4xl flex flex-col items-center`}>
+        {children}
+        <div className="flex flex-col items-center justify-end h-full z-10">
+            <h2 className='text-[32px]'>{title}</h2>
+            <ul className="flex gap-2">
+                {tags.map((tag, index) => (<li className="bg-[var(--background)] text-[var(--foreground)] rounded-full py-2 px-4" key={index}>{tag}</li>))}
+            </ul>
         </div>
-    </div>
+    </article>
+
 )}
