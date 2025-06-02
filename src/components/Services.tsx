@@ -26,7 +26,7 @@ export const Services = () => {
         },
     ]
 return (
-    <section id="services" className="w-full flex flex-wrap gap-8 p-8 items-center justify-center">
+    <section id="services" className="w-full flex flex-wrap gap-8 items-center justify-center">
         <Card3D title={"The future of Web3 on Bitcoin"} color={"blue"} tags={["Branding", "Website", "App"]} >
         </Card3D>
 
