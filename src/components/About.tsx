@@ -11,8 +11,10 @@ return (
         <h1 className="uppercase text-[170px] font-bold text-center leading-[0.9] tracking-tighter pb-24">From<br/>London, UK.</h1>
         <p className='text-[64px] font-serif text-center'>We hold the conviction that excellent design<br />transcends mere appearance — it serves as a vital<br />medium for communication and engagement.</p>
 
-        <div>
-            <PeopleCard/>
+        <div className='relative'>
+            <PeopleCard />
+            <PeopleCard />
+            <PeopleCard />
         </div>
     </section>
 )
