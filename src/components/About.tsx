@@ -1,5 +1,22 @@
+"use client";
+
 import React from 'react'
 import { PeopleCard } from './PeopleCard'
+import { motion, Variants } from "framer-motion";
+
+const brands = [
+    "Meta",
+    "Samsung",
+    "Intel Corporation",
+    "Oracle",
+    "Adobe",
+    "Figma",
+];
+const abilites = {
+    "Web design": ["Product design","Product design","UX & UI design","Art direction"],
+    "Web design": ["Ecommerce","Back-end","Front-end","Responsive"],
+
+}
 
 export const About = () => {
 return (
@@ -11,10 +28,45 @@ return (
         <h1 className="uppercase text-[170px] font-bold text-center leading-[0.9] tracking-tighter pb-24">From<br/>London, UK.</h1>
         <p className='text-[64px] font-serif text-center'>We hold the conviction that excellent design<br />transcends mere appearance — it serves as a vital<br />medium for communication and engagement.</p>
 
-        <div className='relative'>
-            <PeopleCard />
-            <PeopleCard />
-            <PeopleCard />
+        <div className='flex justify-center mt-[130px]'>
+            <PeopleCard style=" z-3"/>
+            <PeopleCard style="absolute z-2"/>
+            <PeopleCard style=" z-1"/>
+        </div>
+
+        <div className='w-screen h-[130px] overflow-x-hidden mt-[150px]'>
+            <motion.ul className="flex text-[96px] whitespace-nowrap gap-x-[120px]"
+                animate={{ x: ["0%", "-100%"] }}
+                transition={{
+                    repeat: Infinity,
+                    repeatType: "loop",
+                    duration: 60,
+                    ease: "linear"
+                }}>
+                {[...brands, ...brands].map((brand, index) => (
+                    <li key={index}>{brand}</li>
+                ))}
+            </motion.ul>
+        </div>
+
+        <div>
+            <h2>Our Capabilites</h2>
+            <div className='flex'>
+                <ul>
+                    <li>Web design</li>
+                    <li>Product design</li>
+                    <li>Product design</li>
+                    <li>UX & UI design</li>
+                    <li>Art direction</li>
+                </ul>
+                <ul>
+                    <li>Visual Design</li>
+                    <li>Ecommerce</li>
+                    <li>Back-end</li>
+                    <li>Front-end</li>
+                    <li>Responsive</li>
+                </ul>
+            </div>
         </div>
     </section>
 )

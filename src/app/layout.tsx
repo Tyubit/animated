@@ -27,7 +27,7 @@ export default function RootLayout({
   return (
     <html lang="en" suppressHydrationWarning>
       <body
-        className={`${instrumentSans.variable} ${instrumentSerif.style} antialiased flex flex-col items-center h-screen`}
+        className={`${instrumentSans.variable} ${instrumentSerif.style} antialiased flex flex-col items-center h-screen overflow-x-hidden`}
       >
         {children}
       </body>
