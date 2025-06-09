@@ -13,7 +13,7 @@ module.exports = {
   ],
   theme: {
         extend: {
-            fontFamily: { serif: ['Instrument Serif', 'serif'], },
+            fontFamily: { serif: ['Instrument Serif', 'serif'], sans: ['"Instrument Sans"', 'sans-serif'],},
     },
   },
   plugins: [],

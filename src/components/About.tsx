@@ -34,7 +34,7 @@ return (
             <PeopleCard style=" z-1"/>
         </div>
 
-        <div className='w-screen h-[130px] overflow-x-hidden mt-[150px]'>
+        <div className='w-screen h-fit overflow-x-hidden mt-[150px]'>
             <motion.ul className="flex text-[96px] whitespace-nowrap gap-x-[120px]"
                 animate={{ x: ["0%", "-100%"] }}
                 transition={{
@@ -49,17 +49,17 @@ return (
             </motion.ul>
         </div>
 
-        <div>
-            <h2>Our Capabilites</h2>
-            <div className='flex'>
-                <ul>
+        <div className='flex flex-col items-end-safe mr-64'>
+            <h2 className='font-serif text-[64px]'>Our Capabilites</h2>
+            <div className='flex gap-32 text-[24px] '>
+                <ul className=''>
                     <li>Web design</li>
                     <li>Product design</li>
                     <li>Product design</li>
                     <li>UX & UI design</li>
                     <li>Art direction</li>
                 </ul>
-                <ul>
+                <ul className=''>
                     <li>Visual Design</li>
                     <li>Ecommerce</li>
                     <li>Back-end</li>
